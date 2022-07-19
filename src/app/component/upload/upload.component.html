@@ -16,6 +16,9 @@
         <div *ngIf="modelName && response">
           <h4> <a> {{modelName}} </a> </h4>
         </div>
+        <div *ngIf="!isValid">
+          <h4> <a> {{validationMsg}} </a> </h4>
+        </div>
         <form class="submit-form" [formGroup]="form" (ngSubmit)="onSubmit()">
           <input class="btn themefont" type="file" name="uploadinput" (change)="onChange($event)"/>
           <button id="uploadBtn" class="btn themefont" type="submit">Upload 3D Model File</button>
