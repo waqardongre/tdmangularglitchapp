@@ -16,10 +16,9 @@ export class UploadComponent implements OnInit {
   list
   emptylist = true
   listMes = "No 3D models avaialble to view"
-  uploadFileName: any;
-  submitBtn;
-  validationMsg: string;
-  isValid: any;
+  uploadFileName
+  validationMsg
+  isValid
 
   constructor (
     private formBuilder: FormBuilder, 
@@ -35,8 +34,6 @@ export class UploadComponent implements OnInit {
     console.log("ngOnInit fired")
     this.retrieveList()
 
-    this.submitBtn = document.getElementById('uploadBtn') as HTMLButtonElement | null;
-    this.submitBtn.disabled = true
     this.isValid = false
   }
 
@@ -79,11 +76,9 @@ export class UploadComponent implements OnInit {
           // because I have not developed 3d model delete functionality.
           if (this.list.length <= 100) {
             this.isValid = true
-            this.submitBtn.disabled = false
             this.form.get('uploadinput').setValue(file)
           }
           else {
-            this.submitBtn.disabled = true
             this.form = this.formBuilder.group({ uploadinput: [''] });
             this.validationMsg = " Cant upload more than 100 3d models, just making " + 
             "sure Djagno rest api on heroku free server won't crash of getting " + 
@@ -92,7 +87,6 @@ export class UploadComponent implements OnInit {
           }
         }
         else {
-          this.submitBtn.disabled = true;
           this.form = this.formBuilder.group({ uploadinput: [''] });
           this.validationMsg = "Please upload files with extension .glb or .fbx"
         }
@@ -101,8 +95,7 @@ export class UploadComponent implements OnInit {
   }
 
   onSubmit() {
-    this.submitBtn.disabled = true
-    this.uploadTDModel()
+    if (this.isValid) { this.uploadTDModel() }
   }
 
   uploadTDModel() {
