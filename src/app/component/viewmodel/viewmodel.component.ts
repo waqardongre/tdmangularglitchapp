@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewmodelService } from 'src/app/services/viewmodel/viewmodel.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import * as THREE from 'three';
 import { OrbitControls } from 'src/assets/extrenalfiles/viewmodel/js/OrbitControls';
@@ -25,7 +25,8 @@ export class ViewmodelComponent implements OnInit {
 
   constructor(
     private viewmodelservice: ViewmodelService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
     ) { 
   }
 
@@ -119,5 +120,9 @@ export class ViewmodelComponent implements OnInit {
 
       }
     }
+  }
+
+  routeToUpload() {
+    this.router.navigateByUrl("/");
   }
 }

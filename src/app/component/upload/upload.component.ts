@@ -65,7 +65,7 @@ export class UploadComponent implements OnInit {
 
   onChange(event) {
     if(event.target.files != undefined) {
-      if (event.target.files.length == 1) {
+      if (event.target.files.length > 0) {
         const file = event.target.files[0]
         this.uploadFileName = file['name']
 
