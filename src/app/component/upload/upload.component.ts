@@ -43,7 +43,13 @@ export class UploadComponent implements OnInit {
     .subscribe({
       next: (data) => {
       this.list = data
-      if (this.list.length > 1){
+      
+      // removing first initializing_file.txt from list
+      if (this.list.length == 1) {
+        this.list = []
+      }
+
+      if (this.list.length > 0) {
         this.emptylist = false
       }
       else{

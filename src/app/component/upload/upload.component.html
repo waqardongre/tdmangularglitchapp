@@ -26,11 +26,9 @@
           <div class="parentcss">
             <div class="list-group">
               <h5 class="list-group-item childcss" *ngIf="emptylist"> {{listMes}}</h5>
-              <div *ngIf="!emptylist">
-                <div class="list-group-item childcss btn" *ngFor="let model of list; let i = index"
-                  [class.active]="i == currentIndex" (click)="routeToViewmodel(model)" style="margin: 0.5em;">
-                    {{ model }} - View this 3D model
-                </div>
+              <div class="list-group-item childcss btn" *ngFor="let model of list; let i = index"
+                [class.active]="i == currentIndex" (click)="routeToViewmodel(model)" style="margin: 0.5em;">
+                {{ model }} - View this 3D model
               </div>
             </div>
           </div>
