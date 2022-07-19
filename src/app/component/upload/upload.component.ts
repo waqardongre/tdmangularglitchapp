@@ -43,7 +43,6 @@ export class UploadComponent implements OnInit {
     .subscribe({
       next: (data) => {
       var TDmodelsList = data
-        
       // ignoring first initializing_file.txt in list
       if (TDmodelsList.length > 1) { 
         this.emptylist = false
@@ -76,12 +75,17 @@ export class UploadComponent implements OnInit {
           // because I have not developed 3d model delete functionality.
           if (this.list != null) {
             if (this.list.length > 100) {
+              this.isValid = false              
               this.form = this.formBuilder.group({ uploadinput: [''] });
               this.validationMsg = " Cant upload more than 100 3d models, just making " + 
               "sure Djagno rest api on heroku free server won't crash of getting " + 
               "out of storage memory by uploaded 3d models, because I have not " + 
               "developed 3d model delete functionality."
             }
+            else {
+              this.isValid = true
+              this.form.get('uploadinput').setValue(file)
+            }  
           }
           else {
             this.isValid = true
@@ -89,8 +93,9 @@ export class UploadComponent implements OnInit {
           }
         }
         else {
+          this.isValid = false
           this.form = this.formBuilder.group({ uploadinput: [''] });
-          this.validationMsg = "Please upload files with extension .glb or .fbx"
+          this.validationMsg = "Please upload GLB or FBX files having extension .glb or .fbx"
         }
       }
     }

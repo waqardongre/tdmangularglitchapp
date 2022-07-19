@@ -13,10 +13,10 @@
   <div class="container mt-3">
     <div class="container">
       <div>
-        <div *ngIf="modelName && response">
+        <div *ngIf="isValid && modelName && response"  style="color: lightseagreen">
           <h4> <a> {{modelName}} </a> </h4>
         </div>
-        <div *ngIf="!isValid">
+        <div *ngIf="!isValid" style="color: red">
           <h4> <a> {{validationMsg}} </a> </h4>
         </div>
         <form class="submit-form" [formGroup]="form" (ngSubmit)="onSubmit()">
