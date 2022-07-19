@@ -13,12 +13,12 @@
   <div class="container mt-3">
     <div class="container">
       <div>
-        <div *ngIf="response && modelName">
+        <div *ngIf="modelName">
           <h4> <a> {{modelName}} </a> </h4>
         </div>
         <form class="submit-form" [formGroup]="form" (ngSubmit)="onSubmit()">
           <input class="btn themefont" type="file" name="uploadinput" (change)="onChange($event)"/>
-          <button class="btn themefont" type="submit">Upload 3D Model File</button>
+          <button id="uploadBtn" class="btn themefont" type="submit">Upload 3D Model File</button>
         </form>
         <div>
           <br>

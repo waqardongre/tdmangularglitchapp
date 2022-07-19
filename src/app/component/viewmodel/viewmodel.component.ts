@@ -67,7 +67,7 @@ export class ViewmodelComponent implements OnInit {
     
         loader.load( url, function ( gltf ) {  
           
-          gltf.scene.scale.set( 7.0, 7.0, 7.0 )
+          gltf.scene.scale.set( 6.0, 6.0, 6.0 )
 
           scene.add( gltf.scene )
 
@@ -95,7 +95,7 @@ export class ViewmodelComponent implements OnInit {
         controls.addEventListener( 'change', render ); // use if there is no animation loop
         controls.minDistance = 2;
         controls.maxDistance = 10;
-        controls.target.set( 0, 0.5, - 0.2 );
+        controls.target.set( 0, 0, 0 );
         controls.update();
 
         window.addEventListener( 'resize', onWindowResize );
