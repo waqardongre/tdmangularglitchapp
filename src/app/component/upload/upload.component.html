@@ -1,0 +1,39 @@
+<div>
+  <nav class="navbar navbar-expand">
+      <a href="#" class="navbar-brand">3D Models Manager Angular Django Web App</a>
+      <div class="navbar-nav mr-auto">
+          <!-- <li class="nav-item">
+              <a routerLink="tutorials" class="nav-link">Item 1</a>
+          </li>
+          <li class="nav-item">
+              <a routerLink="add" class="nav-link">Item 2</a>
+          </li> -->
+      </div>
+  </nav>
+  <div class="container mt-3">
+    <div class="container">
+      <div>
+        <div *ngIf="response && modelName">
+          <h4> <a> {{modelName}} </a> </h4>
+        </div>
+        <form class="submit-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+          <input class="btn themefont" type="file" name="uploadinput" (change)="onChange($event)"/>
+          <button class="btn themefont" type="submit">Upload 3D Model File</button>
+        </form>
+        <div>
+          <br>
+          <h4>All 3D Models list</h4>
+          <div class="parentcss">
+            <div class="list-group">
+              <h5 class="list-group-item childcss" *ngIf="emptylist"> {{listMes}}</h5>
+              <div class="list-group-item childcss btn" *ngFor="let model of list; let i = index"
+                [class.active]="i == currentIndex" (click)="routeToViewmodel(model)" style="margin: 0.5em;">
+                  {{ model }} - View this 3D model
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
