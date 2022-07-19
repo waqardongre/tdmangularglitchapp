@@ -42,19 +42,15 @@ export class UploadComponent implements OnInit {
     this.uploadService.getAll()
     .subscribe({
       next: (data) => {
-      this.list = data
+      var response = data
       
       // removing first initializing_file.txt from list
-      if (this.list.length == 1) {
-        this.list = []
-      }
+      if (data.length == 1) { this.list = [] }
+      else{ this.list = response }
 
-      if (this.list.length > 0) {
-        this.emptylist = false
-      }
-      else{
-        this.listMes = "No 3D models avaialble to view"
-      }
+      if (this.list.length > 0) { this.emptylist = false }
+      else{ this.listMes = "No 3D models avaialble to view" }
+
       console.log("uploadService.getAll observable: " + JSON.stringify(data))
       },
       error: (e) => {
