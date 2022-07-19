@@ -44,10 +44,10 @@ export class UploadComponent implements OnInit {
       next: (data) => {
       var TDmodelsList = data
         
-      // removing first initializing_file.txt from list
+      // ignoring first initializing_file.txt in list
       if (TDmodelsList.length > 1) { 
         this.emptylist = false
-        this.list = TDmodelsList
+        this.list = TDmodelsList.filter(item => item.split('.')[1] == 'fbx' || item.split('.')[1] == 'glb')
       }
       else { 
         this.emptylist = true
