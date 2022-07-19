@@ -43,7 +43,7 @@ export class UploadComponent implements OnInit {
     .subscribe({
       next: (data) => {
       this.list = data
-      if (this.list.length > 0){
+      if (this.list.length > 1){
         this.emptylist = false
       }
       else{
