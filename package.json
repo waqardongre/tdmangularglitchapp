@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "node server.js",
     "heroku-postbuild": "export NODE_OPTIONS=--openssl-legacy-provider; ng build --prod",
-    "build": "ng build",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider; ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
