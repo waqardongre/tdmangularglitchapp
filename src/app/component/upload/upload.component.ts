@@ -74,16 +74,18 @@ export class UploadComponent implements OnInit {
           // Just making sure that djagno res api on heroku free server won't crash of 
           // getting out of storage memory by uploaded 3d models, 
           // because I have not developed 3d model delete functionality.
-          if (this.list.length <= 100) {
-            this.isValid = true
-            this.form.get('uploadinput').setValue(file)
-          }
-          else {
-            this.form = this.formBuilder.group({ uploadinput: [''] });
-            this.validationMsg = " Cant upload more than 100 3d models, just making " + 
-            "sure Djagno rest api on heroku free server won't crash of getting " + 
-            "out of storage memory by uploaded 3d models, because I have not " + 
-            "developed 3d model delete functionality."
+          if (this.list != null) {
+            if (this.list.length <= 100) {
+              this.isValid = true
+              this.form.get('uploadinput').setValue(file)
+            }
+            else {
+              this.form = this.formBuilder.group({ uploadinput: [''] });
+              this.validationMsg = " Cant upload more than 100 3d models, just making " + 
+              "sure Djagno rest api on heroku free server won't crash of getting " + 
+              "out of storage memory by uploaded 3d models, because I have not " + 
+              "developed 3d model delete functionality."
+            }
           }
         }
         else {
