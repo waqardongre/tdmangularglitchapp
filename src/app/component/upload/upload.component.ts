@@ -42,11 +42,12 @@ export class UploadComponent implements OnInit {
     this.uploadService.getAll()
     .subscribe({
       next: (data) => {
-      this.list = data
-      
+      var TDmodelsList = data
+        
       // removing first initializing_file.txt from list
-      if (this.list.length > 1) { 
+      if (TDmodelsList.length > 1) { 
         this.emptylist = false
+        this.list = TDmodelsList
       }
       else { 
         this.emptylist = true
