@@ -1,4 +1,4 @@
-# TdmManager: 3D Models Manager: this is the Angular App for uploading and viewing 3D models formated in .glb and .fbx. 
+# 3D Models Manager: this is the Angular App for uploading and viewing 3D models formated in .glb and .fbx. 
 All the details about the app and the server API is on this Git rep: https://github.com/waqardongre/tdmdjangoherokuapi
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.
