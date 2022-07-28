@@ -5,7 +5,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import * as THREE from 'three';
 import { OrbitControls } from 'src/assets/extrenalfiles/viewmodel/js/OrbitControls';
 import { GLTFLoader } from 'src/assets/extrenalfiles/viewmodel/js/GLTFLoader';
-//import { RGBELoader } from 'src/assets/extrenalfiles/viewmodel/js/RGBELoader';
 
 
 @Component({

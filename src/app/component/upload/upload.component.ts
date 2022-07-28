@@ -70,7 +70,7 @@ export class UploadComponent implements OnInit {
 
         if (this.uploadFileName.split('.')[1] == 'glb' || this.uploadFileName.split('.')[1] == 'fbx') {
           
-          // Just making sure that djagno res api on heroku free server won't crash of 
+          // Just making sure that djagno rest api on heroku free server won't crash of 
           // getting out of storage memory by uploaded 3d models, 
           // because I have not developed 3d model delete functionality.
           if (this.list != null) {
