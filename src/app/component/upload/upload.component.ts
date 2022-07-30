@@ -84,7 +84,6 @@ export class UploadComponent implements OnInit {
             }
             else {
               this.isValid = true
-              debugger
               this.form.get('uploadinput').setValue(file)
             }  
           }
