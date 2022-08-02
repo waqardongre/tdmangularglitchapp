@@ -15,7 +15,7 @@ export class UploadComponent implements OnInit {
   modelName
   list
   emptylist = true
-  listMes = "No 3D models avaialble to view"
+  listMes = "No 3D models avaialble to view. Please upload some."
   uploadFileName
   validationMsg
   isValid
