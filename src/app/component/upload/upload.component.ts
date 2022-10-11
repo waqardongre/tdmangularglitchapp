@@ -10,27 +10,27 @@ import { Router } from '@angular/router';
 })
 export class UploadComponent implements OnInit {
 
-  form: FormGroup
-  response
-  modelName
-  list
-  emptylist = true
-  listMes = "No 3D models avaialble to view. Please upload some."
-  uploadFileName
-  validationMsg
-  isValid
+  private form: FormGroup;
+  private response: any;
+  private modelName: string;
+  private list: any;
+  private emptylist: boolean = true;
+  private listMes: string = "No 3D models avaialble to view. Please upload some.";
+  private uploadFileName: string;
+  private validationMsg: string;
+  private isValid: boolean;
 
   constructor (
-    private formBuilder: FormBuilder, 
+    private formBuilder: FormBuilder,
     private uploadService: UploadService,
     private router: Router
-    ) { }
+    ) {
+      this.form = this.formBuilder.group({
+        uploadinput: ['']
+      });
+    }
 
   ngOnInit() {
-    this.form = this.formBuilder.group({
-      uploadinput: ['']
-    });
-    
     console.log("ngOnInit fired")
     this.retrieveList()
 
@@ -111,7 +111,6 @@ export class UploadComponent implements OnInit {
   uploadTDModel() {
     const formData = new FormData();
     formData.append('file', this.form.get('uploadinput').value)
-    var _uploadService = this.uploadService.upload(formData)
     this.uploadService.upload(formData)
     .subscribe({        
       next: (res)=>{

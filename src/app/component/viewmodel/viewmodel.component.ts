@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewmodelService } from 'src/app/services/viewmodel/viewmodel.service';
 import { ActivatedRoute, Router } from '@angular/router';
-
 import * as THREE from 'three';
-import { OrbitControls } from 'src/assets/extrenalfiles/viewmodel/js/OrbitControls';
-import { GLTFLoader } from 'src/assets/extrenalfiles/viewmodel/js/GLTFLoader';
-
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 @Component({
   selector: 'app-viewmodel',

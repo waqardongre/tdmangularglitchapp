@@ -1,11 +1,12 @@
 body {
-	margin: 0;
-	background-color: #000;
+	background-color: #fff;
 	color: #fff;
-	font-family: Monospace;
-	font-size: 13px;
+	text-shadow: black;
 	line-height: 24px;
+	font-size: 13px;
+	font-family: Monospace;
 	overscroll-behavior: none;
+	margin: 0;
 }
 
 a {
@@ -34,7 +35,7 @@ button {
 	-ms-user-select: none;
 	user-select: none;
 	pointer-events: none;
-	z-index: 1; /* TODO Solve this in HTML */
+	z-index: 1;
 }
 
 a, button, input, select {
@@ -42,7 +43,7 @@ a, button, input, select {
 }
 
 .lil-gui {
-	z-index: 2 !important; /* TODO Solve this in HTML */
+	z-index: 2 !important;
 }
 
 @media all and ( max-width: 640px ) {
@@ -71,16 +72,16 @@ a, button, input, select {
 	background: rgba(0,0,0,0.7);
 }
 
-	#overlay button {
-		background: transparent;
-		border: 0;
-		border: 1px solid rgb(255, 255, 255);
-		border-radius: 4px;
-		color: #ffffff;
-		padding: 12px 18px;
-		text-transform: uppercase;
-		cursor: pointer;
-	}
+#overlay button {
+	background: transparent;
+	border: 0;
+	border: 1px solid rgb(255, 255, 255);
+	border-radius: 4px;
+	color: #ffffff;
+	padding: 12px 18px;
+	text-transform: uppercase;
+	cursor: pointer;
+}
 
 #notSupported {
 	width: 50%;

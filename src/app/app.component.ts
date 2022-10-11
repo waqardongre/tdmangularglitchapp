@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { developer } from './global.js'
+import { developer } from './global.js';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ import { developer } from './global.js'
 export class AppComponent {
   title = 'tdmManager';
 
-  ngOnInit() {
+  ngOnInit(): void {
     console.log(developer)
   }
 }
