@@ -55,7 +55,7 @@ export class ViewmodelComponent implements OnInit {
 
         const container = document.getElementById( 'renderingdiv' );
 
-        camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.25, 20 );
+        camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 10000 );
         camera.position.set( -2.5, 0, 3.0 );
         
         scene = new THREE.Scene();
@@ -91,8 +91,8 @@ export class ViewmodelComponent implements OnInit {
 
         const controls = new OrbitControls( camera, renderer.domElement );
         controls.addEventListener( 'change', render ); // use if there is no animation loop
-        controls.minDistance = 2;
-        controls.maxDistance = 10;
+        controls.minDistance = 0.1;
+        controls.maxDistance = 10000;
         controls.target.set( 0, 0, 0 );
         controls.update();
 
