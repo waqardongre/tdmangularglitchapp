@@ -22,7 +22,7 @@ div{
 }
 
 .btn{
-    margin: 0.2em;
+    margin: 1vw;
 }
 
 .navbar {
@@ -31,4 +31,13 @@ div{
 
 .navbar-brand{
     color: rgb(181, 141, 235);
+}
+
+#uploadinputlabel {
+    cursor: pointer;
+}
+
+#uploadinput {
+    width: 0px;
+    height: 0px;
 }

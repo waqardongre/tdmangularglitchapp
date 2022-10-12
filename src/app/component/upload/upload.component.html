@@ -2,12 +2,6 @@
   <nav class="navbar navbar-expand">
       <a href="#" class="navbar-brand">3D Models Manager</a>
       <div class="navbar-nav mr-auto">
-          <!-- <li class="nav-item">
-              <a routerLink="tutorials" class="nav-link">Item 1</a>
-          </li>
-          <li class="nav-item">
-              <a routerLink="add" class="nav-link">Item 2</a>
-          </li> -->
       </div>
   </nav>
   <div class="container mt-3">
@@ -20,8 +14,10 @@
           <h4> <a> {{validationMsg}} </a> </h4>
         </div>
         <form class="submit-form" [formGroup]="form" (ngSubmit)="onSubmit()">
-          <input class="btn themefont" type="file" name="uploadinput" (change)="onChange($event)"/>
-          <button id="uploadBtn" class="btn themefont" type="submit">Upload 3D Model File</button>
+          <label id="uploadinputlabel" class="btn themefont"> Browse - .glb files
+            <input id="uploadinput" type="file" name="uploadinput" (change)="onChange($event)" accept=".glb"/>
+          </label>
+          <button id="uploadBtn" class="btn themefont" type="submit">Upload</button>
         </form>
         <div>
           <br>
