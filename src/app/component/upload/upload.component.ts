@@ -10,15 +10,15 @@ import { Router } from '@angular/router';
 })
 export class UploadComponent implements OnInit {
 
-  private form: FormGroup;
-  private response: any;
-  private modelName: string;
+  form: FormGroup;
+  response: any;
+  modelName: string;
   private list: any;
-  private emptylist: boolean = true;
+  emptylist: boolean = true;
   private listMes: string = "No 3D models avaialble to view. Please upload some.";
   private uploadFileName: string;
   private validationMsg: string;
-  private isValid: boolean;
+  isValid: boolean;
 
   constructor (
     private formBuilder: FormBuilder,
